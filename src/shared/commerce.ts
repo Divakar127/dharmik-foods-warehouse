@@ -1,0 +1,5 @@
+export type Customer = { id: string; name: string; email: string; phone: string; phone_verified: boolean; profile_complete: boolean; created_at: string };
+export type CartLine = { product_id: number; quantity: number; name: string; sku: string; pack_size: string; image_url: string; unit_price: string; line_total: string; stock: number; available: boolean };
+export type Cart = { items: CartLine[]; version: number; item_count: number; currency: string; subtotal: string; shipping: string; total: string; issues: string[]; can_checkout: boolean; quote_token: string; billing_note: string };
+export type Address = { recipient: string; line1: string; line2: string; city: string; state: string; postal_code: string; country: "India" };
+export type Order = { id: string; number: string; created_at: string; status: string; payment_status: string; fulfillment_status: string; inventory_reserved: boolean; currency: string; customer: { name: string; email: string; phone: string }; shipping_address: Address; items: CartLine[]; subtotal: string; shipping: string; total: string; billing_note: string };

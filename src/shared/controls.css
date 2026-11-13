@@ -1,0 +1,109 @@
+/* Current commerce controls. Loaded last; layout and card geometry stay intact. */
+:root {
+  --action-primary: #166147;
+  --action-hover: #104c37;
+  --control-border: #899b93;
+  --control-surface: #f4f8f5;
+  --control-active: #e5f2e9;
+  --control-ink: #18583f;
+  --control-ring: #bcdac9;
+  --control-radius: 12px;
+}
+:root[data-theme="dark"] {
+  --action-primary: #2b7957;
+  --action-hover: #23734f;
+  --control-border: #687d72;
+  --control-surface: #202c26;
+  --control-active: #293e31;
+  --control-ink: #b6e4c5;
+  --control-ring: #3d6c51;
+}
+.button,.primary,.secondary,.filter-entry,.filter-submit,.sort-button,.retry-button,.save-detail,.google-signin {
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  box-shadow: none;
+  transition: background-color 160ms var(--ui-ease),border-color 160ms var(--ui-ease),transform 160ms var(--ui-ease);
+}
+.button,.primary,.filter-entry,.filter-submit,.add-cart-button,.newsletter-input button {
+  background: var(--action-primary);
+  border-color: var(--action-primary);
+  color: #fff;
+}
+.button:hover,.primary:hover,.filter-entry:hover,.filter-submit:hover,.add-cart-button:hover:enabled,.newsletter-input button:hover:enabled {
+  background: var(--action-hover);
+  border-color: var(--action-hover);
+  color: #fff;
+}
+.secondary,.sort-button,.retry-button,.save-detail,.google-signin,.detail-actions>.button {
+  background: var(--control-surface);
+  border: 1px solid var(--control-border);
+  color: var(--text-strong);
+}
+.secondary:hover,.sort-button:hover,.retry-button:hover,.save-detail:hover,.google-signin:hover,.detail-actions>.button:hover {
+  background: var(--control-active);
+  border-color: var(--control-ink);
+  color: var(--text-strong);
+}
+.button,.primary,.secondary,.filter-submit,.sort-button,.save-detail,.google-signin { min-height: 48px; }
+.filter-entry { padding-left: 22px; padding-right: 22px; }
+.filter-submit { border-width: 1px; }
+.filter-sidebar,.catalog-controls,.results-toolbar { border-radius: 16px; }
+.filter-title { background: var(--control-surface); border-bottom-width: 1px; padding: 14px; gap: 8px; }
+.filter-title h3 { font-size: 17px; white-space: nowrap; }
+.filter-title a { font-size: 13px; min-height: 44px; display: inline-flex; align-items: center; }
+.filter-title>svg { color: var(--control-ink); }
+.filter-option { border-radius: 8px; padding: 4px 6px; margin-left: -6px; margin-right: -6px; }
+.filter-option:has(input:checked) { background: var(--control-active); color: var(--control-ink); font-weight: 600; }
+input[type=checkbox],input[type=radio] { accent-color: var(--action-primary); }
+.active-filters a,.unpaid-badge {
+  border-radius: 999px;
+  border-color: var(--control-ring);
+  background: var(--control-active);
+  color: var(--control-ink);
+}
+.results-toolbar select,.commerce-form input,.form-grid input,.form-grid select,.form-grid textarea,.filter-search,.login input,.customer-search input,.banner-settings input,.search-form input {
+  border-radius: var(--control-radius);
+  border-color: var(--control-border);
+  background: var(--surface);
+}
+.commerce-form input,.login input,.form-grid input:not([type=checkbox]):not([type=radio]),.form-grid select,.customer-search input { min-height: 48px; }
+input:focus,select:focus,textarea:focus { border-color: var(--control-ink); }
+:is(button,a,input,select,textarea):focus-visible { outline: 2px solid var(--control-ink); outline-offset: 3px; }
+.search-container .header-search { border-radius: 16px; background: var(--control-surface); border-color: var(--control-border); }
+.search-container .header-search:focus-within { border-color: var(--control-ink); box-shadow: 0 0 0 3px var(--control-ring); }
+.header-search input { background: transparent; }
+.header-search button { border-radius: 0 14px 14px 0; }
+.header-search button:hover { background: var(--action-hover); }
+.header-actions .theme-toggle,.theme-toggle { border-radius: 14px; border-color: var(--border); background: var(--control-surface); }
+.theme-toggle:hover { background: var(--control-active); border-color: var(--control-border); }
+.header-actions .saved-count,.header-actions .cart-icon b { background: var(--action-primary); }
+.category-nav a:hover,.header-actions .saved-link:hover,.header-actions .shop-link:hover { color: var(--control-ink); }
+.reference-product-card .save-button { border-color: var(--border); box-shadow: none; background: var(--surface); }
+.reference-product-card .save-button:hover,.reference-product-card .save-button.is-saved { background: var(--control-active); color: var(--control-ink)!important; border-color: var(--control-ring); }
+.reference-product-card .is-saved svg { fill: var(--action-primary); }
+.card-purchase-row .add-cart-button { border-radius: 14px; box-shadow: none; }
+.detailed .add-cart-button { border-radius: 999px; }
+.product-category-label { border-radius: 999px; padding-left: 10px; padding-right: 10px; }
+.newsletter-input { border-radius: 16px; padding: 5px; gap: 5px; background: var(--surface); }
+.newsletter-input input { border-radius: 11px; padding-left: 12px; }
+.newsletter-input button { border-radius: 11px; }
+.quantity-control { border-radius: 999px; border-color: var(--control-border); background: var(--control-surface); }
+.quantity-control button { background: var(--control-surface); color: var(--control-ink); }
+.quantity-control button:hover:enabled { background: var(--control-active); }
+.pagination a,.pagination button { border-radius: 999px; min-height: 44px; background: var(--control-surface); border-color: var(--control-border); }
+.gallery-thumbnails button { border-radius: 12px; }
+.gallery-thumbnails button[aria-pressed=true] { border-color: var(--control-ink); box-shadow: 0 0 0 2px var(--control-ring); }
+.commerce-panel,.bill-summary,.commerce-empty,.login,.banner-settings { border-radius: 18px; }
+.nav-item.active { background: var(--control-active); color: var(--control-ink); }
+.pantry-tabs button.selected { color: var(--control-ink); border-bottom-color: var(--control-ink); }
+.pantry-tabs button:hover { color: var(--control-ink); }
+.danger { border-radius: 999px; background: var(--danger-text); border-color: var(--danger-text); color: var(--surface); }
+.site-footer :focus-visible,.utility-bar :focus-visible,.story-promise :focus-visible { outline-color: #fff; }
+@media(max-width:600px) {
+  .newsletter-input { padding: 4px; gap: 3px; }
+  .newsletter-input button { padding-left: 12px; padding-right: 12px; }
+}
+@media(prefers-reduced-motion:reduce) { .button,.primary,.secondary,.filter-entry,.filter-submit,.sort-button { transition: none; } }
+@media(forced-colors:active) { .button,.primary,.secondary,.add-cart-button,.filter-option:has(input:checked) { border: 1px solid ButtonText; } }
+@media print { :root,:root[data-theme="dark"] { --control-surface: #fff; --control-active: #fff; --control-ink: #000; --control-border: #888; } }

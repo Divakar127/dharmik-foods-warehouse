@@ -1,0 +1,109 @@
+/* Taste refinement: keep the commerce grids, header geometry and image ratios. */
+:root {
+  font-family: "Instrument Sans", "Noto Sans Tamil", Arial, sans-serif;
+  --ui-radius: 8px;
+  --ui-ease: cubic-bezier(.2,.8,.2,1);
+}
+body { font-size: 16px; line-height: 1.6; }
+html { scroll-behavior: auto; }
+h1,h2,h3,h4 { font-weight: 600; }
+h1,h2 { letter-spacing: -.035em; }
+strong { font-weight: 600; }
+.theme-toggle { font-family: inherit; }
+:is(button,a,input,select,textarea):focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 3px;
+}
+input,select,textarea { border-color: var(--control-border); }
+input:focus,select:focus,textarea:focus { border-color: var(--accent-text); }
+.button,.primary,.secondary,.danger,.add-cart-button,.filter-submit,.sort-button,.retry-button,.save-detail,.google-signin {
+  min-height: 46px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  transition: background-color 150ms var(--ui-ease),border-color 150ms var(--ui-ease),transform 150ms var(--ui-ease);
+}
+.secondary,.sort-button,.retry-button,.save-detail,.google-signin { border-color: var(--control-border); }
+.button:active,.primary:active,.secondary:active,.add-cart-button:active,.filter-submit:active { transform: translateY(1px); }
+.eyebrow,.hero-kicker { font-weight: 500; letter-spacing: .045em; }
+.rotating-hero { border: 0; border-radius: var(--ui-radius); }
+.rotating-hero h1 { font-weight: 600; letter-spacing: -.035em; }
+.rotating-hero .hero-content>p { color: var(--text-strong); }
+/* The photos carry their own colour; no dark veil over food imagery. */
+.rotating-hero .hero-photo::after { content: none; }
+.section-heading h2,.story-page h2 { font-weight: 600; }
+.category-tile,.lifestyle-card { border-radius: var(--ui-radius); }
+.category-tile { background: var(--surface); }
+.category-tile h3 { font-weight: 600; }
+.product-card { box-shadow: none; border-radius: var(--ui-radius); }
+.product-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px var(--shadow); border-color: var(--control-border); }
+.product-info h3 { font-size: 16px; font-weight: 600; }
+.product-sku { font-size: 13px; line-height: 1.5; }
+.product-pack { font-size: 14px; }
+.product-pack>span { color: var(--text-secondary); }
+.product-stock { font-size: 13px; }
+.price-row small { font-size: 13px; }
+.price-row strong,.detail-price { font-weight: 600; font-variant-numeric: tabular-nums; }
+.product-image img { transition: transform 600ms var(--ui-ease); }
+.product-card:hover .product-image img { transform: scale(1.025); }
+.save-button { width: 44px; height: 44px; top: 8px; right: 8px; border-color: var(--control-border); }
+.category-badge { font-size: 12px; max-width: calc(100% - 64px); }
+.catalog-controls { background: var(--surface-inset); }
+.filter-entry { font-size: 16px; font-weight: 600; }
+.filter-title h3,.filter-sidebar legend { font-weight: 600; }
+.filter-option { min-height: 32px; margin-top: 6px; }
+.catalog-note,.cart-feedback,.search-suggestions small { font-size: 13px; }
+.results-toolbar label,.results-toolbar>span { font-weight: 500; }
+.story-opening h1 { font-family: "Instrument Serif",Georgia,serif; font-weight: 400; font-size: clamp(42px,4.7vw,68px); letter-spacing: -.025em; }
+.story-opening h1 em { color: inherit; }
+.story-manifesto { border-radius: var(--ui-radius); }
+.story-manifesto>span:last-child { font-size: 13px; letter-spacing: .04em; }
+.story-opening p.story-lead { font-weight: 500; }
+.story-values-grid article { background: var(--surface); border-top: 3px solid var(--accent-border); }
+.story-values-grid article>span { font-variant-numeric: tabular-nums; }
+.newsletter-section h2 { font-size: 32px; font-weight: 600; letter-spacing: -.03em; }
+.newsletter-input { border-color: var(--control-border); }
+.newsletter-input button { background: var(--action-primary); font-size: 16px; font-weight: 600; }
+.newsletter-input button:hover:enabled { background: var(--action-hover); }
+.newsletter-section p,.story-editorial p:not(.eyebrow),.story-values-grid p,.food-guide p { color: var(--text-strong); }
+.site-footer { --border: #526158; }
+.site-footer :focus-visible,.utility-bar :focus-visible,.story-promise :focus-visible { outline-color: #ffffff; }
+.footer-topline { letter-spacing: 0; }
+.footer-grid h3 { color: #fff; font-size: 17px; font-weight: 600; }
+.footer-grid a:not(.brand) { font-size: 16px; min-height: 32px; margin-bottom: 8px; }
+.footer-grid p { max-width: 29ch; }
+.footer-grid a:not(.brand):hover { color: #fff; text-underline-offset: 5px; }
+.footer-bottom { font-size: 13px; }
+.footer-brand { min-height: 44px; }
+.footer-topline>a,.newsletter-privacy>a { display: inline-flex; align-items: center; min-height: 44px; }
+.quantity-control button { min-width: 44px; min-height: 44px; }
+.gallery-thumbnails button { border-color: var(--control-border); }
+.gallery-thumbnails button[aria-pressed=true] { border-color: var(--accent-text); }
+.warehouse-theme-toolbar { font-family: inherit; }
+.warehouse-theme-toolbar>span,.dashboard-body h1,.pantry-heading h1 { font-weight: 600; }
+.catalog-panel,.pantry-metrics article,.stats article,.banner-editor { border-radius: var(--ui-radius); }
+.stats strong,.pantry-metrics strong { font-variant-numeric: tabular-nums; }
+.nav-item.active { background: var(--surface-inset); }
+th { background: var(--surface-inset); color: var(--text-strong); font-weight: 600; }
+.form-grid label,.login label { font-weight: 500; }
+@media(hover:hover) and (pointer:fine) {
+  .button:hover,.primary:hover,.secondary:hover,.add-cart-button:hover:enabled,.filter-submit:hover { transform: translateY(-1px); }
+  .category-tile:hover { border-color: var(--control-border); }
+  .product-link:hover h3 { text-decoration: underline; text-underline-offset: 3px; }
+  .text-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+}
+@media(max-width:600px) {
+  .filter-option { min-height: 44px; }
+  .product-info h3 { font-size: 16px; }
+  .product-sku,.product-stock,.price-row small { font-size: 13px; }
+  .product-pack { font-size: 14px; }
+  .category-badge { font-size: 11px; }
+  .story-opening h1 { font-size: 44px; }
+  .newsletter-section h2 { font-size: 28px; }
+  .footer-grid a:not(.brand) { min-height: 44px; margin-bottom: 0; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .product-card:hover,.product-card:hover .product-image img,.button:hover,.primary:hover,.secondary:hover,.add-cart-button:hover:enabled,.filter-submit:hover { transform: none; }
+}
+@media print { .site-footer { --border: #aaa; } }

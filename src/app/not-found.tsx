@@ -1,0 +1,1 @@
+export default function NotFound() { return <main className="warehouse-orders"><p className="eyebrow">DHARMIK FOODS / WAREHOUSE</p><h1>This page could not be found.</h1><p>Return to the catalog or open the warehouse dashboard.</p><a className="primary" href="/">Food catalog</a> <a className="secondary" href="/pantry">Dashboard</a></main>; }
